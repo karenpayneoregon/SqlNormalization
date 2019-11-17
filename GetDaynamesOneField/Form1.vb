@@ -22,7 +22,13 @@ Public Class Form1
         FilterCourses()
 
     End Sub
-
+    ''' <summary>
+    ''' When the selected department changes in the department listbox, apply
+    ''' a filter to the courses listbox for available courses under the selected
+    ''' department.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub DepartmentsListBox_SelectedIndexChanged(sender As Object, e As EventArgs) _
         Handles DepartmentsListBox.SelectedIndexChanged
 
@@ -40,7 +46,8 @@ Public Class Form1
 
         CoursesView.ApplyFilter(Function(customer As Course)
                                     Return customer.DepartmentID =
-                                           CType(DepartmentsListBox.SelectedItem, Department).DepartmentID
+                                           CType(DepartmentsListBox.SelectedItem,
+                                                 Department).DepartmentID
                                 End Function)
 
         CoursesListBox.SelectedIndex = 0

@@ -1,5 +1,5 @@
 # Database normalization tips
-This repository is for a TechNet Wiki article Writing SQL for your application Part II focusing on proper database design and relations within a Visual Studio solution with Visual Basic .NET.
+This repository is for a TechNet Wiki article [Writing SQL for your application Part II](https://social.technet.microsoft.com/wiki/contents/articles/53445.writing-sql-for-your-application-part-2.aspx) focusing on proper database design and relations within a Visual Studio solution with Visual Basic .NET.
 
 First part in this series [Writing SQL for your application Part 1](https://social.technet.microsoft.com/wiki/contents/articles/51356.writing-sql-for-your-application-part-1.aspx)
 

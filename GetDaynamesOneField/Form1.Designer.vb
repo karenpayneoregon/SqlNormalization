@@ -85,16 +85,17 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(427, 223)
+        Me.ClientSize = New System.Drawing.Size(400, 211)
         Me.Controls.Add(Me.DaysCourseAvailableListBox)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CoursesListBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DepartmentsListBox)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Day names in one field"
+        Me.Text = "Day names in one field (not recommended)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
