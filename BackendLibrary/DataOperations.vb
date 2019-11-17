@@ -48,12 +48,42 @@ Public Class DataOperations
         End Using
 
         Return departmentList
-    End Function
 
+    End Function
+    ''' <summary>
+    ''' Get day names course is offered using reference tables
+    ''' </summary>
+    ''' <param name="CourseIdentifier">Course id to get available days for course</param>
+    ''' <returns></returns>
+    Public Function DayNamesFromReferences(CourseIdentifier As Integer, Optional Available As Boolean = True) As List(Of CourseDay)
+        Dim courseDaysList As New List(Of CourseDay)
+
+        Using cn As New SqlConnection With {.ConnectionString = ConnectionString}
+            Using cmd As New SqlCommand With {.Connection = cn}
+
+                cmd.CommandText = "SELECT CD.id , WDN.DayName AS Name ,CD.DayIndex ,CD.Offered FROM dbo.CourseDay AS CD INNER JOIN dbo.WeekDayName AS WDN ON CD.DayIndex = WDN.WeekId WHERE  ( CD.CourseID = @CourseIdentifier AND Offered = @Available);"
+
+                cmd.Parameters.AddWithValue("@CourseIdentifier", CourseIdentifier)
+                cmd.Parameters.AddWithValue("@Available", Available)
+
+                cn.Open()
+
+                Dim reader = cmd.ExecuteReader()
+
+                While reader.Read()
+                    courseDaysList.Add(New CourseDay() With {.Id = reader.GetInt32(0), .Name = reader.GetString(1), .DayIndex = reader.GetInt32(2), .Offered = reader.GetBoolean(3), .CourseID = CourseIdentifier})
+                End While
+
+            End Using
+        End Using
+
+        Return courseDaysList
+
+    End Function
     ''' <summary>
     ''' Get day names course is offered where one field is used to hold days
     ''' </summary>
-    ''' <param name="CourseIdentifier"></param>
+    ''' <param name="CourseIdentifier">Course id to get available days for course</param>
     ''' <returns></returns>
     Public Function DayNamesFromSingleField(CourseIdentifier As Integer) As List(Of String)
 
@@ -61,15 +91,7 @@ Public Class DataOperations
 
         Using cn As New SqlConnection With {.ConnectionString = ConnectionString}
             Using cmd As New SqlCommand With {.Connection = cn}
-                cmd.CommandText =
-                    <SQL>
-                        SELECT SUBSTRING(a.b, v.number + 1, 1) AS DayParts
-                        FROM   ( SELECT (   SELECT Days
-                                            FROM   OnsiteCourse
-                                            WHERE  ( CourseID = @CourseIdentifier )) AS b ) AS a
-                               INNER JOIN master.dbo.spt_values AS v ON v.number &lt;LEN(a.b)
-                        WHERE  ( v.type = 'P' );
-                    </SQL>.Value
+                cmd.CommandText = "SELECT SUBSTRING(a.b, v.number + 1, 1) AS DayParts FROM  (SELECT (SELECT Days FROM OnsiteCourse WHERE  ( CourseID = @CourseIdentifier )) AS b ) AS a INNER JOIN master.dbo.spt_values AS v ON v.number < LEN(a.b) WHERE  ( v.type = 'P' );"
 
                 cmd.Parameters.AddWithValue("@CourseIdentifier", CourseIdentifier)
 

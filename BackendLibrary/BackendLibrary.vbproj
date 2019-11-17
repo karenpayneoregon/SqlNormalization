@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Course.vb" />
+    <Compile Include="Classes\CourseDay.vb" />
     <Compile Include="DataOperations.vb" />
     <Compile Include="Classes\Department.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
