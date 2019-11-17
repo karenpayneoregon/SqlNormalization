@@ -3,8 +3,10 @@ Imports BackendLibrary.Classes
 Imports Equin.ApplicationFramework
 
 Public Class Form1
+
     Private DataOperations As DataOperations
     Private CoursesView As BindingListView(Of Course)
+
     ''' <summary>
     ''' 1. Populate Departments ListBox and Courses ListBox
     ''' 2. Set filter for courses in current selected department
@@ -67,6 +69,17 @@ Public Class Form1
 
         DaysCourseAvailableListBox.DataSource = DataOperations.DayNamesFromSingleField(
             CType(CoursesListBox.SelectedItem, ObjectView(Of Course)).Object.CourseID)
+
+    End Sub
+    ''' <summary>
+    ''' Demonstrates obtaining properties of the selected day.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub SelectedDayButton_Click(sender As Object, e As EventArgs) Handles SelectedDayButton.Click
+        Dim SelectedDay As CourseDay = CType(DaysCourseAvailableListBox.SelectedItem, CourseDay)
+
+        MessageBox.Show($"Course: {SelectedDay.CourseID} Day index {SelectedDay.DayIndex}")
 
     End Sub
 End Class

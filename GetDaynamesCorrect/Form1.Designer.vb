@@ -28,6 +28,7 @@ Partial Class Form1
         Me.CoursesListBox = New System.Windows.Forms.ListBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DaysCourseAvailableListBox = New System.Windows.Forms.ListBox()
+        Me.SelectedDayButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -81,11 +82,21 @@ Partial Class Form1
         Me.DaysCourseAvailableListBox.Size = New System.Drawing.Size(97, 160)
         Me.DaysCourseAvailableListBox.TabIndex = 7
         '
+        'SelectedDayButton
+        '
+        Me.SelectedDayButton.Location = New System.Drawing.Point(285, 196)
+        Me.SelectedDayButton.Name = "SelectedDayButton"
+        Me.SelectedDayButton.Size = New System.Drawing.Size(97, 23)
+        Me.SelectedDayButton.TabIndex = 8
+        Me.SelectedDayButton.Text = "Selected day"
+        Me.SelectedDayButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(400, 211)
+        Me.ClientSize = New System.Drawing.Size(400, 248)
+        Me.Controls.Add(Me.SelectedDayButton)
         Me.Controls.Add(Me.DaysCourseAvailableListBox)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CoursesListBox)
@@ -106,4 +117,5 @@ Partial Class Form1
     Friend WithEvents CoursesListBox As ListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents DaysCourseAvailableListBox As ListBox
+    Friend WithEvents SelectedDayButton As Button
 End Class
