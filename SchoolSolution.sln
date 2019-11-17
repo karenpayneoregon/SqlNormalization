@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{0166D72B-BECA-48A7-8729-141465299E16}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BackendLibrary", "BackendLibrary\BackendLibrary.vbproj", "{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend Examples", "Frontend Examples", "{62CD326A-139B-4739-BA88-041E6B54BD0C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GetDaynamesOneField", "GetDaynamesOneField\GetDaynamesOneField.vbproj", "{E22962A8-56C0-4FE6-85D8-EA10EF538732}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{140C59D6-4E5C-44E4-A721-E18C4BD74B09}"
+	ProjectSection(SolutionItems) = preProject
+		DataScript.sql = DataScript.sql
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GetDaynamesCorrect", "GetDaynamesCorrect\GetDaynamesCorrect.vbproj", "{B93CCACE-EC89-40DC-92D5-271775F0C34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22962A8-56C0-4FE6-85D8-EA10EF538732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22962A8-56C0-4FE6-85D8-EA10EF538732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22962A8-56C0-4FE6-85D8-EA10EF538732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22962A8-56C0-4FE6-85D8-EA10EF538732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93CCACE-EC89-40DC-92D5-271775F0C34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93CCACE-EC89-40DC-92D5-271775F0C34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93CCACE-EC89-40DC-92D5-271775F0C34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93CCACE-EC89-40DC-92D5-271775F0C34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DBC1DE9-EC22-42EC-93B9-7B6E62B459A6} = {0166D72B-BECA-48A7-8729-141465299E16}
+		{E22962A8-56C0-4FE6-85D8-EA10EF538732} = {62CD326A-139B-4739-BA88-041E6B54BD0C}
+		{B93CCACE-EC89-40DC-92D5-271775F0C34F} = {62CD326A-139B-4739-BA88-041E6B54BD0C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2593FAC-8FCF-453D-BE1A-F1BB07555A83}
+	EndGlobalSection
+EndGlobal
