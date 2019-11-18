@@ -30,7 +30,7 @@ Public Class DataOperations
 
     End Function
     Public Function OnSiteCourses() As List(Of Course)
-        Dim departmentList As New List(Of Course)
+        Dim courseList As New List(Of Course)
 
         Using cn As New SqlConnection With {.ConnectionString = ConnectionString}
             Using cmd As New SqlCommand With {.Connection = cn}
@@ -42,12 +42,12 @@ Public Class DataOperations
                 Dim reader = cmd.ExecuteReader()
 
                 While reader.Read()
-                    departmentList.Add(New Course() With {.CourseID = reader.GetInt32(0), .Title = reader.GetString(1), .Credits = reader.GetInt32(2), .DepartmentID = reader.GetInt32(3)})
+                    courseList.Add(New Course() With {.CourseID = reader.GetInt32(0), .Title = reader.GetString(1), .Credits = reader.GetInt32(2), .DepartmentID = reader.GetInt32(3)})
                 End While
             End Using
         End Using
 
-        Return departmentList
+        Return courseList
 
     End Function
     ''' <summary>

@@ -106,7 +106,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Day names in one field (not recommended)"
+        Me.Text = "Day names in one field (recommended)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

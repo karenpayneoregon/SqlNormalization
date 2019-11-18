@@ -4,8 +4,8 @@ Imports Equin.ApplicationFramework
 
 Public Class Form1
 
-    Private DataOperations As DataOperations
-    Private CoursesView As BindingListView(Of Course)
+    Private _dataOperations As DataOperations
+    Private _coursesView As BindingListView(Of Course)
 
     ''' <summary>
     ''' 1. Populate Departments ListBox and Courses ListBox
@@ -14,12 +14,13 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        DataOperations = New DataOperations()
+        _dataOperations = New DataOperations()
+        DepartmentsListBox.DataSource = _dataOperations.Departments()
 
-        DepartmentsListBox.DataSource = DataOperations.Departments()
+        Dim courses = _dataOperations.OnSiteCourses
+        _coursesView = New BindingListView(Of Course)(courses)
 
-        CoursesView = New BindingListView(Of Course)(DataOperations.OnSiteCourses)
-        CoursesListBox.DataSource = CoursesView
+        CoursesListBox.DataSource = _coursesView
 
         FilterCourses()
 
@@ -46,16 +47,14 @@ Public Class Form1
             Exit Sub
         End If
 
-        CoursesView.ApplyFilter(Function(customer As Course)
-                                    Return customer.DepartmentID =
-                                           CType(DepartmentsListBox.SelectedItem,
-                                                 Department).DepartmentID
+        _coursesView.ApplyFilter(Function(course As Course)
+                                    Return course.DepartmentID = CType(DepartmentsListBox.SelectedItem, Department).DepartmentID
                                 End Function)
 
         CoursesListBox.SelectedIndex = 0
 
         DaysCourseAvailableListBox.DataSource =
-            DataOperations.DayNamesFromReferences(
+            _dataOperations.DayNamesFromReferences(
                 CType(CoursesListBox.SelectedItem, ObjectView(Of Course)).Object.CourseID)
 
     End Sub
@@ -67,7 +66,7 @@ Public Class Form1
     Private Sub CoursesListBox_SelectedIndexChanged(sender As Object, e As EventArgs) _
         Handles CoursesListBox.SelectedIndexChanged
 
-        DaysCourseAvailableListBox.DataSource = DataOperations.DayNamesFromSingleField(
+        DaysCourseAvailableListBox.DataSource = _dataOperations.DayNamesFromReferences(
             CType(CoursesListBox.SelectedItem, ObjectView(Of Course)).Object.CourseID)
 
     End Sub
