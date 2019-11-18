@@ -14,6 +14,7 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
         _dataOperations = New DataOperations()
         DepartmentsListBox.DataSource = _dataOperations.Departments()
 
@@ -76,9 +77,9 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub SelectedDayButton_Click(sender As Object, e As EventArgs) Handles SelectedDayButton.Click
-        Dim SelectedDay As CourseDay = CType(DaysCourseAvailableListBox.SelectedItem, CourseDay)
+        Dim selectedDay As CourseDay = CType(DaysCourseAvailableListBox.SelectedItem, CourseDay)
 
-        MessageBox.Show($"Course: {SelectedDay.CourseID} Day index {SelectedDay.DayIndex}")
+        MessageBox.Show($"Course: {selectedDay.CourseID} Day index {selectedDay.DayIndex}")
 
     End Sub
 End Class

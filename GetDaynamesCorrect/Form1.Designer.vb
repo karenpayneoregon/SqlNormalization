@@ -37,7 +37,7 @@ Partial Class Form1
         Me.Label1.Location = New System.Drawing.Point(11, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 13)
-        Me.Label1.TabIndex = 2
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Departments"
         '
         'DepartmentsListBox
@@ -54,16 +54,16 @@ Partial Class Form1
         Me.Label2.Location = New System.Drawing.Point(144, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
-        Me.Label2.TabIndex = 4
+        Me.Label2.TabIndex = 1
         Me.Label2.Text = "Courses"
         '
         'CoursesListBox
         '
         Me.CoursesListBox.FormattingEnabled = True
-        Me.CoursesListBox.Location = New System.Drawing.Point(147, 30)
+        Me.CoursesListBox.Location = New System.Drawing.Point(148, 30)
         Me.CoursesListBox.Name = "CoursesListBox"
         Me.CoursesListBox.Size = New System.Drawing.Size(120, 160)
-        Me.CoursesListBox.TabIndex = 5
+        Me.CoursesListBox.TabIndex = 4
         '
         'Label3
         '
@@ -71,23 +71,23 @@ Partial Class Form1
         Me.Label3.Location = New System.Drawing.Point(282, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 13)
-        Me.Label3.TabIndex = 6
+        Me.Label3.TabIndex = 2
         Me.Label3.Text = "Day available"
         '
         'DaysCourseAvailableListBox
         '
         Me.DaysCourseAvailableListBox.FormattingEnabled = True
-        Me.DaysCourseAvailableListBox.Location = New System.Drawing.Point(285, 30)
+        Me.DaysCourseAvailableListBox.Location = New System.Drawing.Point(284, 30)
         Me.DaysCourseAvailableListBox.Name = "DaysCourseAvailableListBox"
-        Me.DaysCourseAvailableListBox.Size = New System.Drawing.Size(97, 160)
-        Me.DaysCourseAvailableListBox.TabIndex = 7
+        Me.DaysCourseAvailableListBox.Size = New System.Drawing.Size(120, 160)
+        Me.DaysCourseAvailableListBox.TabIndex = 5
         '
         'SelectedDayButton
         '
         Me.SelectedDayButton.Location = New System.Drawing.Point(285, 196)
         Me.SelectedDayButton.Name = "SelectedDayButton"
-        Me.SelectedDayButton.Size = New System.Drawing.Size(97, 23)
-        Me.SelectedDayButton.TabIndex = 8
+        Me.SelectedDayButton.Size = New System.Drawing.Size(116, 23)
+        Me.SelectedDayButton.TabIndex = 6
         Me.SelectedDayButton.Text = "Selected day"
         Me.SelectedDayButton.UseVisualStyleBackColor = True
         '
@@ -95,7 +95,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(400, 248)
+        Me.ClientSize = New System.Drawing.Size(413, 248)
         Me.Controls.Add(Me.SelectedDayButton)
         Me.Controls.Add(Me.DaysCourseAvailableListBox)
         Me.Controls.Add(Me.Label3)
